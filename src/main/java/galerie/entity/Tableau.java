@@ -1,22 +1,24 @@
 package galerie.entity;
-import java.util.Date;
 import javax.persistence.*;
 import lombok.*;
 
-// Un exemple d'entité
-// On utilise Lombok pour auto-générer getter / setter / toString...
-// cf. https://examples.javacodegeeks.com/spring-boot-with-lombok/
 @Getter @Setter @NoArgsConstructor @RequiredArgsConstructor @ToString
 @Entity // Une entité JPA
-public class Galerie {
+public class Tableau {
     @Id  @GeneratedValue(strategy = GenerationType.IDENTITY) 
     private Integer id;
 
     @Column(unique=true)
     @NonNull
-    private String nom;
+    private String titre;
     
     @Column(unique=true)
-    @NonNull
-    private String adresse;
+    private String support;
+    
+    @Column
+    private int largeur;
+    
+    @Column
+    private int hauteur;
+      
 }
