@@ -1,5 +1,6 @@
 package galerie.entity;
 import java.util.Date;
+import java.util.List;
 import javax.persistence.*;
 import lombok.*;
 
@@ -19,4 +20,7 @@ public class Galerie {
     @Column(unique=true)
     @NonNull
     private String adresse;
+    
+    @OneToMany(mappedBy = "galerie")
+    private List<Exposition> expositions;
 }

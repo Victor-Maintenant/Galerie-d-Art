@@ -1,5 +1,6 @@
 package galerie.entity;
 import java.sql.Date;
+import java.util.List;
 import javax.persistence.*;
 import lombok.*;
 
@@ -19,4 +20,10 @@ public class Exposition {
     
     @Column
     private int duree;
+    
+    @ManyToOne @NonNull
+    private Galerie galerie;
+    
+    @OneToMany(mappedBy = "exposition")
+    private List<Transaction> transactions;
 }

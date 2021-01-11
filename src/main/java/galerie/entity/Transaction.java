@@ -16,4 +16,12 @@ public class Transaction {
     @Column(unique=true)
     private float prixVente;
       
+    @ManyToOne @NonNull
+    private Exposition exposition;
+    
+    @ManyToOne @NonNull
+    private Personne personne;
+    
+    @OneToOne @NonNull
+    private Tableau tableau;
 }

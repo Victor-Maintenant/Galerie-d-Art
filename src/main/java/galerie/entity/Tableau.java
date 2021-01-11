@@ -20,5 +20,10 @@ public class Tableau {
     
     @Column
     private int hauteur;
-      
+    
+    @ManyToOne
+    private Artiste artiste;
+    
+    @OneToOne
+    private Transaction transaction;
 }
