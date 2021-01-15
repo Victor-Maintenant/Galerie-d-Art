@@ -7,12 +7,12 @@ import lombok.*;
 @Getter @Setter @NoArgsConstructor @RequiredArgsConstructor @ToString
 @Entity // Une entité JPA 
 public class Artiste extends Personne{
-    @Id  @GeneratedValue(strategy = GenerationType.IDENTITY) 
+    @Id   
     private Integer id;
     
-    @Column(unique=true)
     @NonNull
     private String biographie;
+    
     
     public Artiste(String nom, String adresse, String biographie) {
         super(nom, adresse);
